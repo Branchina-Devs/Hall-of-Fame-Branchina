@@ -14,7 +14,7 @@ This project was realized by students for students and it aims at showcasing the
 
 ##### Dependencies
 
-- `docker` — ![Docker](https://github.com/docker) is a platform that allows developers to build, deploy, and run applications in  containers.
+- `docker` — [Docker](https://github.com/docker) is a platform that allows developers to build, deploy, and run applications in  containers.
 
 ##### Installation
 
