@@ -1,0 +1,13 @@
+services: 
+  hof_frontend:
+    image: ezekiel0108/hof-branchina-frontend
+    container_name: hof_frontend
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+  hof_backend:
+    image: gkracket207/hof-branchina-backend
+    container_name: hof_backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
