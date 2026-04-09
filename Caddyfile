@@ -1,0 +1,12 @@
+* {
+    handle_path /api* {
+        reverse_proxy node_backend:3000
+    }
+
+    handle {
+        root * /var/www/html
+        file_server
+        # Optional: Handles Single Page App (SPA) routing
+        try_files {path} /index.html
+    }
+}
