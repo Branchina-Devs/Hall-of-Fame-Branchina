@@ -45,6 +45,11 @@ services:
     image: caddy:latest
     container_name: hof_caddy
     restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.whoami.rule=Host(whoami.${DOMAIN})
+      - traefik.http.routers.whoami.entrypoints=websecure
+      - traefik.http.routers.whoami.tls.certresolver=letsencrypt
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
@@ -52,14 +57,14 @@ services:
       - logs:/var/log/caddy
     networks:
       - front-back
-      - General_Purpose_Services_proxy
+      - general_purpose_services_proxy
 
 networks:
   front-back:
     external: false
   back-db:
     external: false
-  General_Purpose_services_proxy:
+  general_purpose_services_proxy:
     external: true
 
 volumes:
