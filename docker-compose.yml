@@ -18,7 +18,7 @@ services:
       - DB_USER=usr
       - DB_PASSWORD=${MARIADB_PW}
     depends_on:
-      db:
+      hof_db:
         condition: service_healthy
   hof_db:
     image: mariadb:latest
