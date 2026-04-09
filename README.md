@@ -27,6 +27,7 @@ docker compose up -d
 ##### To-Do
 
 - [ ] Add in sorting by field of study
+- [ ] Add interface for easy insertion into database
 
 ##### Methods and Tecnologies
 
