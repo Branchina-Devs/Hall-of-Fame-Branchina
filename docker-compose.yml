@@ -18,7 +18,8 @@ services:
       - DB_USER=usr
       - DB_PASSWORD=${MARIADB_PW}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
     image: mariadb:latest
     container_name: db
@@ -35,6 +36,11 @@ services:
       - mariadb_data:/var/lib/mysql
     networks:
       - back-db
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
   caddy:
     image: caddy:latest
     container_name: caddy
