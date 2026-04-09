@@ -18,6 +18,8 @@ services:
       - MARIADB_USER=usr
       - MARIADB_PASSWORD=${MARIADB_PW}
     ports: "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
   caddy:
     image: caddy:latest
     container_name: caddy
