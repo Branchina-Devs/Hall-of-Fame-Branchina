@@ -1,12 +1,9 @@
-* {
+:80 {
     handle_path /api* {
-        reverse_proxy node_backend:3000
+        reverse_proxy hof_backend:3000
     }
 
     handle {
-        root * /var/www/html
-        file_server
-        # Optional: Handles Single Page App (SPA) routing
-        try_files {path} /index.html
+        reverse_proxy hof_frontend:80 
     }
 }
