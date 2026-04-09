@@ -47,9 +47,9 @@ services:
     restart: unless-stopped
     labels:
       - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(hof.branchina.edu.it)
-      - traefik.http.routers.whoami.entrypoints=websecure
-      - traefik.http.routers.whoami.tls.certresolver=letsencrypt
+      - traefik.http.routers.hof.rule=Host(`hof.branchina.edu.it`)
+      - traefik.http.routers.hof.entrypoints=websecure
+      - traefik.http.routers.hof.tls.certresolver=letsencrypt
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
