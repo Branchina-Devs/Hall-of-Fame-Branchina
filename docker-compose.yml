@@ -13,7 +13,7 @@ services:
       - front-back
       - back-db
     environment:
-      - DB_HOST=db
+      - DB_HOST=hof_db
       - DB_DATABASE=hof_db
       - DB_USER=usr
       - DB_PASSWORD=${MARIADB_PW}
