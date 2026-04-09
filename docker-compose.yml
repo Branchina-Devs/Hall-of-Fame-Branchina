@@ -52,7 +52,7 @@ services:
       - logs:/var/log/caddy
     networks:
       - front-back
-      - General_Purpose_services_proxy
+      - General_Purpose_Services_proxy
 
 networks:
   front-back:
