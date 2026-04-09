@@ -20,9 +20,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-  db:
+  hof_db:
     image: mariadb:latest
-    container_name: db
+    container_name: hof_db
     env_file:
       - .env
     environment:
@@ -41,9 +41,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-  caddy:
+  hof_caddy:
     image: caddy:latest
-    container_name: caddy
+    container_name: hof_caddy
     restart: unless-stopped
     ports:
       - "80:80"
